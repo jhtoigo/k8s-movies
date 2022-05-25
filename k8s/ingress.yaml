@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pages-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "movies.jhtoigo.cloud"
+      http:
+        paths:
+        - path: "/"
+          pathType: Prefix
+          backend:
+            service:
+              name: web-movies
+              port:
+                number: 80
