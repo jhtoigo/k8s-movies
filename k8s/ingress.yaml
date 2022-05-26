@@ -15,3 +15,24 @@ spec:
               name: movies
               port:
                 number: 80
+    - host: "prometheus.jhtoigo.cloud"
+      http:
+        paths:
+        - path: "/"
+          pathType: Prefix
+          backend:
+            service:
+              name: prometheus-server
+              port:
+                number: 80
+    - host: "grafana.jhtoigo.cloud"
+      http:
+        paths:
+        - path: "/"
+          pathType: Prefix
+          backend:
+            service:
+              name: grafana
+              port:
+                number: 80
+                
