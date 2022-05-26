@@ -1,0 +1,7 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: prometheus-server
+spec:
+  type: ExternalName
+  externalName: prometheus-server.monitoramento.svc.cluster.local
