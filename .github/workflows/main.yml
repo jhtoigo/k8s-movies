@@ -41,7 +41,7 @@ jobs:
             k8s/mongodb/pv-mongodb.yaml
             k8s/mongodb/secret-mongodb.yaml
             k8s/mongodb/statefulset-mongodb.yaml
-            k8s/mongodb/service/service-mongodb.yaml            
+            k8s/mongodb/service-mongodb.yaml            
             k8s/movies/configmap-movies.yaml
             k8s/movies/deployment-movies.yaml
             k8s/movies/service-movies.yaml
