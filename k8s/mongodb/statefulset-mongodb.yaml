@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: movies-mongodb
+spec:
+  selector:
+    matchLabels:
+      app: movies-mongodb
+  serviceName: "mongodb"
+  template:
+    metadata:
+      labels:
+        app: movies-mongodb
+    spec:
+      volumes:
+        - name: cvi-pvc
+          persistentVolumeClaim:
+            claimName: cvi-pvc
+      containers:
+      - name: mongodb
+        image: mongo:4.2.8
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        volumeMounts:
+            - mountPath: '/data/db'
+              name: cvi-pvc
+        ports:
+          - containerPort: 27017
+        envFrom:
+          - secretRef:
+              name: mongodb-secret

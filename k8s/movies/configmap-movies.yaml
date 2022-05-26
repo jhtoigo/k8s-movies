@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-movies
+data:
+  MONGODB_DB: "admin"
+  MONGODB_HOST: "movies-mongodb"
+  MONGODB_PORT: "27017"

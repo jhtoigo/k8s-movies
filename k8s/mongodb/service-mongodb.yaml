@@ -1,0 +1,11 @@
+# Service do MongoDB
+apiVersion: v1
+kind: Service
+metadata:
+  name: movies-mongodb
+spec:
+  selector:
+    app: movies-mongodb
+  ports:
+    - port: 27017
+  type: ClusterIP
