@@ -45,5 +45,5 @@ jobs:
             k8s/movies/configmap-movies.yaml
             k8s/movies/deployment-movies.yaml
             k8s/movies/service-movies.yaml
-            
+            k8s/ingress.yaml
     
