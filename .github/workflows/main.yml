@@ -38,5 +38,6 @@ jobs:
          with:
            images: jhtoigo/rotten-potatoes:v${{ github.run_number }}
            manifests: |
-            k8s/deployment.yaml
+            k8s/movies/*
+            k8s/mongodb/*
     
