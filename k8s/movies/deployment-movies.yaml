@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: movies
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: movies
@@ -11,6 +11,9 @@ spec:
     metadata:
       labels:
         app: movies
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '5000'
     spec:
       containers:
         - name: movies
